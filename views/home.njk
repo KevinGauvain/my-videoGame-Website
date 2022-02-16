@@ -2,7 +2,11 @@
 {% block content %}
   <div>
     <h1> Hello World this is the title from home.njk</h1>
-    <li>{{list}}</li>
+    <p>
+      {% for pushed in list %}
+      <li> {{ pushed }} </li>
+      {% endfor %}
+    </p>
     <p>{{total}}</p>
   </div>
 {% endblock %}
