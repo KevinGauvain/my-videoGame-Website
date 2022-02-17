@@ -7,7 +7,19 @@
   </head>
   <body>
     <h1 class="titre"> VideoGame Website</h1>
+    <button>
+    <a href ="/">Accueil</a>
+    </button>
+    <button>
+    <a href ="/platformList">Liste des plateformes</a>
+    </button>
+    <form>
+      <input type = "button" value = "Précédent"  onclick = "history.back()">
+      <input type = "button" value = "Suivant"  onclick = "history.go(+1)">
+    </form>
     {% block content %}
     {% endblock %}
   </body>
 </html>
+
+{# changer méthode pour button pr et sui  #}
