@@ -1,10 +1,17 @@
 {% extends "layout.njk" %}
 {% block content %}
   <div>
-    <h1> Hello World this is the title from home.njk</h1>
+    <h1 class="titre2"> Hello World this is the title from home.njk</h1>
     <p>
-      {% for pushed in list %}
-      <li> {{ pushed }} </li>
+      {% for platform in list %}
+      {# <li> {{ platform.name }} </li>
+      <p> {{ platform.id }} </p> #}
+      <a href="/gameList/{{platform.id}}">{{ platform.name }}</a>
+      {# <a href="http://videogame-api.fly.dev/games/platforms/"> #}
+      {# <li> {{ platform.logo.url }} </li> #}
+      <li><img src="{{ platform.logo.url  }}"></li>
+      <p></p>
+      <!-- <li><img src="https://images.igdb.com/igdb/image/upload/t_logo_med/pl95.png"></li> -->
       {% endfor %}
     </p>
     <p>{{total}}</p>
