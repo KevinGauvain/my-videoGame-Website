@@ -1,0 +1,15 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <div>
+    <h1 class="titre2"> Hello World this is the title from gamesinfos.njk</h1>
+    <p>
+      {# {% for game in list %} #}
+      <li> {{ list.category  }} </li>
+      {# <p></p> #}
+      {# {% endfor %} #}
+    </p>
+    <p>{{total}}</p>
+  </div>
+{% endblock %}
+
+{# A essayer : {{ list.screenshots[0].url  }} + img src #}

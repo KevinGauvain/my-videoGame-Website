@@ -61,9 +61,22 @@ app.get("/gameList/:platformId", (req, response) => {
   });
 });
 
-// ex slug => Jérémy Jérem => jeremy-jerem ----- Jérémy & Jérém => jeremy-and-jerem ou jeremy-jerem
+app.get("/gameInformation/:gameId", (req, response) => {
+  const gameId = req.params;
+  // console.log(gameId);
+  request(`http://videogame-api.fly.dev/games/${gameId.gameId}`, (error, body) => {
+    if (error) {
+      throw error;
+    }
+    const result = JSON.parse(body);
+    // result.total;
+    // console.log(result);
 
-// http://videogame-api.fly.dev/games/platforms/<platform_id>
+    response.render("gamesinfos", { list: result, total: result.total });
+  });
+});
+
+// ex slug => Jérémy Jérem => jeremy-jerem ----- Jérémy & Jérém => jeremy-and-jerem ou jeremy-jerem
 
 // brouillon
 // -
