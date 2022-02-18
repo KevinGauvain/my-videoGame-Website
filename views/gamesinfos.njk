@@ -5,8 +5,16 @@
     <p>
       {# {% for game in list %} #}
       <li> {{ list.category  }} </li>
-      {# <p></p> #}
-      {# {% endfor %} #}
+      {# <li> {{ list.cover.url }} </li> #}
+      <li><p> Cover : <img src="{{ list.cover.url }}"> </p></li>
+      {# <li> {{ list.screenshots[0].url }} </li> #}
+       <li><p> Screenshots : <img src="{{ list.screenshots[0].url }}"> </p></li>
+
+      {# {% for screenshots in list %}
+        <li> {{ list.screenshots[i].url  }} </li>
+      <p></p>
+      {% endfor %} #}
+
     </p>
     <p>{{total}}</p>
   </div>
