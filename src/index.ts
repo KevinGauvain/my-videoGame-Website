@@ -49,7 +49,8 @@ app.get("/gameList/:platformId", (req, response) => {
   // :toto = test de compréhension, remplacer platformId par toto dans route et variable
   const platformId = req.params;
   const myquery = req.query;
-  // console.log(platformId);
+  console.log("------lg52------", platformId);
+  console.log("-------lg53-------", platformId.platformId);
   if (Object.keys(myquery).length === 0) {
     request(`http://videogame-api.fly.dev/games/platforms/${platformId.platformId}`, (error, body) => {
       if (error) {

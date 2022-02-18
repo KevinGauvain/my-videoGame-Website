@@ -14,7 +14,8 @@
     <a href ="/gameList/:platformId">Page précédente</a>
     </button>
      <button>
-    <a href ="http://localhost:3000/gameList/:{{platformId.platformId}}">Page suivante</a>
+    <a href ="http://localhost:3000/gameList/{{platformId.platformId}}">Page suivante</a>
+    {# "http://localhost:3000/gameList/{{platformId.platformId}}?page={{myquery.page}}" #}
     </button>
   </div>
 {% endblock %}
