@@ -1,8 +1,12 @@
 .titre {
-  color: cadetblue;
+  color: rgb(68, 157, 160);
   text-decoration: underline;
 }
 
 .titre2 {
-  color: cornflowerblue;
+  color: rgb(69, 128, 240);
+}
+
+.background {
+  background-color: rgb(196, 219, 219);
 }

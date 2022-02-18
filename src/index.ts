@@ -46,7 +46,7 @@ app.get("/platformList", (req, response) => {
 });
 
 app.get("/gameList/:platformId", (req, response) => {
-  // :toto = test de compréhension, remplacer platformId par toto
+  // :toto = test de compréhension, remplacer platformId par toto dans route et variable
   const platformId = req.params;
   const myquery = req.query;
   // console.log(platformId);
@@ -59,7 +59,7 @@ app.get("/gameList/:platformId", (req, response) => {
       // result.games;
       // result.total;
       // console.log(result.games);
-      response.render("gameslistbyplatf", { list: result.games, total: result.total });
+      response.render("gameslistbyplatf", { list: result.games, total: result.total, platformId: platformId });
     });
   } else {
     request(
@@ -72,7 +72,12 @@ app.get("/gameList/:platformId", (req, response) => {
         // result.games;
         // result.total;
         // console.log(result.games);
-        response.render("gameslistbyplatf", { list: result.games, total: result.total });
+        response.render("gameslistbyplatf", {
+          list: result.games,
+          total: result.total,
+          myquery: myquery,
+          platformId: platformId,
+        });
       },
     );
   }
@@ -118,10 +123,6 @@ app.get("/gameInformation/:gameId", (req, response) => {
 //   });
 // });
 
-// app.get("/gameList/:platformId", (req, res) => {
-//   console.log(req.query);
-// });
-
 // app.get("/gameList/:toto", (req, response) => {
 //   const platformId = req.params;
 //   const query = req.query;
@@ -142,6 +143,9 @@ app.get("/gameInformation/:gameId", (req, response) => {
 // - ex slug => Jérémy Jérem => jeremy-jerem ----- Jérémy & Jérém => jeremy-and-jerem ou jeremy-jerem
 // -
 // -
+// - app.get("/gameList/:platformId", (req, res) => {
+//   console.log(req.query);
+// });
 // -
 // -
 // -

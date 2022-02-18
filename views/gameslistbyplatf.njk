@@ -10,5 +10,11 @@
       {% endfor %}
     </p>
     <p>{{total}}</p>
+    <button>
+    <a href ="/gameList/:platformId">Page précédente</a>
+    </button>
+     <button>
+    <a href ="http://localhost:3000/gameList/:{{platformId.platformId}}">Page suivante</a>
+    </button>
   </div>
 {% endblock %}
